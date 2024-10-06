@@ -33,7 +33,7 @@ export async function before(m, {
     switch (m.sender) {
         case info.nomerown+"@s.whatsapp.net":
         
-            messageText = "📣 *Perhatian semua, Ownerku telah tiba disini sambutlah Bang Tio* ";
+            messageText = "ðŸ“£ *Perhatian semua, Ownerku telah tiba disini sambutlah Admin Nero* ";
             break 
         default:
             if (isCek.owner) {
