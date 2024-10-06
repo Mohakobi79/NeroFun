@@ -30,7 +30,7 @@ const {
 const {
  tz } = moment
 const app = express();
-const port = process.env.PORT || 8040;
+const port = process.env.PORT || 8050;
 const time = tz('Asia/Jakarta').format('HH:mm:ss');
 const currentFilePath = new URL(import.meta.url).pathname;
 
