@@ -10,18 +10,18 @@ global.setting = {
  clearSesi: false, // pembersih sampah sessions 
  clearTmp: true, // pembersih sampah tmp
  addReply: true, // buat with thumbnail di pesan
- idgc: '' // id gc buat join only
+ idgc: '120363294273260187@g.us' // id gc buat join only
  }
 
 global.info = {
- nomerbot : '6285735001187',
- pairingNumber : '6285735001187',
- figlet: 'Merry', // buat tampilan konsole start
- nomorwa : '-', // nomer owner
- nameown : 'Nero',
- nomerown : '-', //nomer owner
- packname : 'sticker by',
- author : 'N E R O  D E V',
+ nomerbot : '6289671907733',
+ pairingNumber : '6289671907733',
+ figlet: 'BOT', // buat tampilan konsole start
+ nomorwa : '6285816684572', // nomer owner
+ nameown : 'NERO',
+ nomerown : '6285816684572', //nomer owner
+ packname : 'sticker by NERO DEV',
+ author : 'N I G H T M A R E',
  namebot : '乂 Nero - BOT',
  wm : 'Copyright © 2020-2024 Nightmare.',
  stickpack : 'Whatsapp',
@@ -36,7 +36,7 @@ global.media = {
  rulesBot : 'https://telegra.ph/file/afcfa712bd09f4fcf027a.jpg',
  thumbnail : 'https://telegra.ph/file/acf5ac140d24afa4e5e13.jpg',
  thumb : 'https://telegra.ph/file/89f925eaab0ab2d0f001a.jpg',
- logo : 'https://telegra.ph/file/07428fea2fd4dccaab65f.jpg',
+ logo : 'https://cdn.nekohime.xyz/file/95a8fbe0.jpg',
  unReg : 'https://telegra.ph/file/ef02d1fdd59082d05f08d.jpg',
  registrasi : 'https://telegra.ph/file/0169f000c9ddc7c3315ff.jpg',
  confess : 'https://telegra.ph/file/03cabea082a122abfa5be.jpg',
@@ -54,7 +54,7 @@ global.media = {
 global.url = {
  sig: 'https://instagram.com/tulisan.ku.id',
  sgh:  'https://github.com/Tiooxy',
- sgc: 'https://chat.whatsapp.com/Fg17qkyJ5rWAtE5hlR5F0w'
+ sgc: 'https://chat.whatsapp.com/Ke8asNY4YWNGi3FinIFAAR'
 }
 // Donasi
 global.payment = {
@@ -65,7 +65,7 @@ global.payment = {
 // Info Wait
 global.msg = {
  wait: '⏱️ *Mohon bersabar*\n\> Sedang menjalankan perintah dari *User*!',
- eror: '🤖 *Information Bot*\n\> Mohon maaf atas ketidaknyamanan dalam menggunakan *Nightmare Bot* . Ada kesalahan dalam sistem saat menjalankan perintah.'
+ eror: '🤖 *Information Bot*\n\> Mohon maaf atas ketidaknyamanan dalam menggunakan *Nero Bot* . Ada kesalahan dalam sistem saat menjalankan perintah.'
 }
  
 // api_id web suntik
