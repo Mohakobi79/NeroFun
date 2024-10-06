@@ -43,7 +43,7 @@ handler.all = async function(m) {
 
         // Ini untuk command crator/owner
         global.kontak2 = [
-            [owner[0], await conn.getName(owner[0] + '6282285357346@s.whatsapp.net'), 'Tio', 'https://whatsapp.com', true],
+            [owner[0], await conn.getName(owner[0] + '6285816684572@s.whatsapp.net'), 'Nero', 'https://whatsapp.com', true],
         ]
 
         global.fkon = {
@@ -86,9 +86,9 @@ handler.all = async function(m) {
             forwardingScore: 1,
             isForwarded: true,
             forwardedNewsletterMessageInfo: {
-                "newsletterJid": "120363183258593542@newsletter",
+                "newsletterJid": "120363280694885720@newsletter",
                 "serverMessageId": 103,
-                "newsletterName": `📡 ping : ${ms} × ⌜ NightMare MD ⌟ © - Tio`
+                "newsletterName": `ðŸ“¡ ping : ${ms} Ã— âŒœ Nero MD âŒŸ Â© - Nero`
 
             },
             externalAdReply: {
@@ -97,7 +97,7 @@ handler.all = async function(m) {
                 body: ucapan(),
                 previewType: "VIDEO",
                 thumbnailUrl: logo,
-                sourceUrl: 'https://nightmare.bot.whatsapp.md',
+                sourceUrl: 'https://nero.bot.whatsapp.md',
 
             }
         }
