@@ -29,10 +29,10 @@ jobs:
           node-version: lts/*
 
       - name: Install step
-        run: "yarn "
+        run: "yarn"
 
       - name: Build step
-        run: "npm start "
+        run: "npm start"
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
