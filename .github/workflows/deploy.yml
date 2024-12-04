@@ -29,16 +29,16 @@ jobs:
           node-version: lts/*
 
       - name: Install step
-        run: "yarn"
+        run: "npm i "
 
       - name: Build step
-        run: "npm start"
+        run: "npm start "
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "mohakobi79-nerofun-79"
-          entrypoint: "index.js"
-          root: ". /"
+          project: "mohakobi79-nerofun-19"
+          entrypoint: "main.js"
+          root: "./"
           
           
