@@ -1,44 +1,43 @@
-name: Deploy
+name: Node.js CI
+
 on:
   push:
-    branches: main
+    branches:
+      - main
   pull_request:
-    branches: main
+    branches:
+      - main
+  schedule:
+    - cron: '0 */6 * * *'  # BY 𝙎-𝙏𝞢𝞜 
 
 jobs:
-  deploy:
-    name: Deploy
+  build:
+
     runs-on: ubuntu-latest
 
-    permissions:
-      id-token: write # Needed for auth with Deno Deploy
-      contents: read # Needed to clone the repository
+    strategy:
+      matrix:
+        node-version: [20.x]
 
     steps:
-      - name: Clone repository
-        uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-      - name: Install Deno
-        uses: denoland/setup-deno@v2
-        with:
-          deno-version: v2.x
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
 
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
+    - name: Install dependencies
+      run: npm install
 
-      - name: Install step
-        run: "npm i "
+    - name: Install FFmpeg
+      run: sudo apt-get install -y ffmpeg
 
-      - name: Build step
-        run: "npm run start "
+    - name: Start application with timeout
+      run: |
+        timeout 21590s npm start  # Limite l'exécution à 5h 59m 50s
 
-      - name: Upload to Deno Deploy
-        uses: denoland/deployctl@v1
-        with:
-          project: "mohakobi79-nerofun-19"
-          entrypoint: "main.js"
-          root: "./"
-          
-          
+    - name: Save state (Optional)
+      run: |
+        ./save_state.sh
