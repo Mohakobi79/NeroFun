@@ -19,7 +19,7 @@ let handler = async (m, {
         throw eror
     }
 }
-handler.help = handler.command = ['bartai']
+handler.help = handler.command = ['barti']
 handler.tags = ['ai']
 export default handler
 
