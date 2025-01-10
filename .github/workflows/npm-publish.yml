@@ -1,33 +1,43 @@
-# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
-# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
-
-name: Node.js Package
-
+name: Deploy
 on:
-  release:
-    types: [created]
+  push:
+    branches: master
+  pull_request:
+    branches: master
+  schedule:
+    - cron: "0 */6 * * *" # تشغيل كل 6 ساعات
 
 jobs:
-  build:
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - run: npm i
-      - run: npm run start 
 
-  publish-npm:
-    needs: build
-    runs-on: ubuntu-latest
+    permissions:
+      id-token: write # Needed for auth with Deno Deploy
+      contents: read # Needed to clone the repository
+      actions: write # Needed to cancel other workflows
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      # Step to cancel previous workflows
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.11.0
         with:
-          node-version: 20
-          registry-url: https://registry.npmjs.org/
-      - run: npm i
-      - run: npm run start 
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Clone the repository
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      # Install Node.js
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      # Install dependencies
+      - name: Install Dependencies
+        run: npm install 
+
+      # Build the project
+      - name: Build Project
+        run: npm run start
